@@ -11,20 +11,25 @@ function getPageComponent(pageOptions) {
       };
     },
     methods: {
-      login: function () {
+      login: async function () {
         var details = {
           username: this.username,
           password: this.password
         };
-        socket.emit('login', details, (err, failure) => {
-          if (err) {
-            this.error = 'Failed to login due to error: ' + err;
-          } else if (failure) {
-            this.error = failure;
-          } else {
-            this.error = '';
-          }
-        });
+        let failure;
+        try {
+          failure = await socket.invoke('login', details);
+        } catch (error) {
+          this.error = `Failed to login due to error: ${error}`;
+
+          return;
+        }
+
+        if (failure) {
+          this.error = failure;
+        } else {
+          this.error = '';
+        }
       },
       inputKeyDown: function (event) {
         if (event.key === 'Enter') {

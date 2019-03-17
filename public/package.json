@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "sc-collection": "^7.0.0",
-    "sc-component-emitter": "^1.2.1",
-    "sc-json-stable-stringify": "^2.0.0",
-    "sc-model": "^1.1.6",
-    "socketcluster-client": "^14.1.0",
+    "ag-collection": "^1.0.1",
+    "ag-model": "^1.0.0",
+    "asyngular-client": "^5.3.3",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },

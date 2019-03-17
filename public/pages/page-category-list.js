@@ -1,9 +1,9 @@
-import SCCollection from '/node_modules/sc-collection/sc-collection.js';
+import AGCollection from '/node_modules/ag-collection/ag-collection.js';
 
 function getPageComponent(pageOptions) {
   return Vue.extend({
     data: function () {
-      this.categoryCollection = new SCCollection({
+      this.categoryCollection = new AGCollection({
         socket: pageOptions.socket,
         type: 'Category',
         fields: ['name', 'desc'],

@@ -1,5 +1,5 @@
-import SCCollection from '/node_modules/sc-collection/sc-collection.js';
-import SCModel from '/node_modules/sc-model/sc-model.js';
+import AGCollection from '/node_modules/ag-collection/ag-collection.js';
+import AGModel from '/node_modules/ag-model/ag-model.js';
 
 function getPageComponent(pageOptions) {
   return Vue.extend({
@@ -7,14 +7,14 @@ function getPageComponent(pageOptions) {
       categoryId: String
     },
     data: function () {
-      this.categoryModel = new SCModel({
+      this.categoryModel = new AGModel({
         socket: pageOptions.socket,
         type: 'Category',
         id: this.categoryId,
         fields: ['name', 'desc']
       });
 
-      this.productsCollection = new SCCollection({
+      this.productsCollection = new AGCollection({
         socket: pageOptions.socket,
         type: 'Product',
         fields: ['name', 'qty', 'price'],
@@ -27,7 +27,7 @@ function getPageComponent(pageOptions) {
 
       let lowStockThreshold = 3;
 
-      this.lowStockProductsCollection = new SCCollection({
+      this.lowStockProductsCollection = new AGCollection({
         socket: pageOptions.socket,
         type: 'Product',
         fields: ['name', 'qty', 'price'],
@@ -66,7 +66,7 @@ function getPageComponent(pageOptions) {
     methods: {
       refreshLowStockCollection: function () {
         this.lowStockProductsCollection.destroy();
-        this.lowStockProductsCollection = new SCCollection({
+        this.lowStockProductsCollection = new AGCollection({
           socket: pageOptions.socket,
           type: 'Product',
           fields: ['name', 'qty', 'price'],
@@ -113,7 +113,7 @@ function getPageComponent(pageOptions) {
       },
       toggleRealtime: function () {
         this.productsCollection.destroy();
-        this.productsCollection = new SCCollection({
+        this.productsCollection = new AGCollection({
           socket: pageOptions.socket,
           type: 'Product',
           fields: ['name', 'qty', 'price'],

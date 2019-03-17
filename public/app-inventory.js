@@ -3,7 +3,7 @@ import getCategoryDetailsPageComponent from '/pages/page-category-details.js';
 import getProductDetailsPageComponent from '/pages/page-product-details.js';
 import getLoginPageComponent from '/pages/page-login.js';
 
-let socket = window.socket = socketCluster.create();
+let socket = window.socket = asyngularClient.create();
 
 let pageOptions = {
   socket
@@ -37,9 +37,13 @@ new Vue({
   },
   created: function () {
     this.isAuthenticated = this.isSocketAuthenticated();
-    socket.on('authStateChange', () => {
-      this.isAuthenticated = this.isSocketAuthenticated();
-    });
+
+    (async () => {
+      for await (let event of socket.listener('authStateChange')) {
+        this.isAuthenticated = this.isSocketAuthenticated();
+      }
+    })();
+
     this._localStorageAuthHandler = (change) => {
       // In case the user logged in from a different tab
       if (change.key === socket.options.authTokenName) {

@@ -1,6 +1,6 @@
 {
-  "name": "socketcluster-sample",
-  "description": "A sample SocketCluster app",
+  "name": "asyngular-sample",
+  "description": "A sample Asyngular app",
   "version": "2.0.0",
   "contributors": [
     {
@@ -9,15 +9,17 @@
     }
   ],
   "dependencies": {
-    "component-emitter": "1.2.1",
+    "ag-crud-rethink": "^1.0.0",
+    "agc-broker-client": "^5.3.2",
+    "asyngular-client": "^5.3.3",
+    "asyngular-server": "^5.3.3",
     "connect": "^3.6.6",
-    "express": "4.16.3",
-    "minimist": "1.1.0",
-    "sc-crud-rethink": "^7.1.0",
-    "scc-broker-client": "^6.0.1",
-    "serve-static": "1.13.2",
-    "socketcluster": "^14.2.1",
-    "socketcluster-client": "^14.1.0"
+    "eetase": "^3.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.18.10",
+    "serve-static": "^1.13.2",
+    "uuid": "^3.3.2"
   },
   "keywords": [
     "websocket",

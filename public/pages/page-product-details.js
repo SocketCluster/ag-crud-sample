@@ -1,4 +1,4 @@
-import SCModel from '/node_modules/sc-model/sc-model.js';
+import AGModel from '/node_modules/ag-model/ag-model.js';
 
 function getPageComponent(pageOptions) {
   return Vue.extend({
@@ -7,7 +7,7 @@ function getPageComponent(pageOptions) {
       productId: String
     },
     data: function () {
-      this.productModel = new SCModel({
+      this.productModel = new AGModel({
         socket: pageOptions.socket,
         type: 'Product',
         id: this.productId,

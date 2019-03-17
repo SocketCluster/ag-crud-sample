@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "ag-collection": "^1.0.1",
-    "ag-model": "^1.0.0",
+    "ag-collection": "^1.0.3",
+    "ag-model": "^1.0.1",
+    "async-stream-emitter": "^3.0.3",
     "asyngular-client": "^5.3.3",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"

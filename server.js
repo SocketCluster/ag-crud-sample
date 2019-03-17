@@ -168,6 +168,13 @@ async function postFilter(req) {
 }
 
 let crud = agCrudRethink.attach(agServer, crudOptions);
+
+(async () => {
+  for await (let {error} of crud.listener('error')) {
+    console.error(error);
+  }
+})();
+
 agServer.thinky = crud.thinky;
 
 // Add some dummy data to our store

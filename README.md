@@ -1,4 +1,4 @@
-# sc-crud-sample
+# ag-crud-sample
 
 Scroll to the bottom for installation instructions.
 
@@ -37,7 +37,7 @@ To setup and run this sample:
 - Make sure you have Node.js installed (http://nodejs.org/)
 - Make sure you have RethinkDB installed (https://www.rethinkdb.com/)
 - Run ```git clone https://github.com/SocketCluster/ag-crud-sample.git```
-- Run ```cd ag-crud-sample``` (to navigate to the sc-crud-sample/ directory)
+- Run ```cd ag-crud-sample``` (to navigate to the ag-crud-sample/ directory)
 - Run ```npm install``` (to install back end modules)
 - Run ```cd public && npm install && cd ..``` (to install front end modules inside the public/ directory)
 - In a different terminal (or in the background), run ```sudo rethinkdb``` (make sure RethinkDB stays running)

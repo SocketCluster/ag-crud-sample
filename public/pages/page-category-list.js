@@ -21,7 +21,7 @@ function getPageComponent(pageOptions) {
       computeCategoryDetailsUrl: function (category) {
         return `#/category/${category.id}`;
       },
-      addCategory: function () {
+      addCategory: async function () {
         if (this.newCategoryName === '') {
           return;
         }
@@ -30,13 +30,12 @@ function getPageComponent(pageOptions) {
         };
         this.newCategoryName = '';
 
-        this.categoryCollection.create(newCategory)
-        .then((err, newId) => {
-          // TODO: Success message
-        })
-        .catch((err) => {
+        try {
+          await this.categoryCollection.create(newCategory);
+        } catch (error) {
           // TODO: Handle error
-        });
+        }
+        // TODO: Success message
       },
       inputKeyDown: function (event) {
         if (event.key === 'Enter') {

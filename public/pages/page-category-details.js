@@ -82,7 +82,7 @@ function getPageComponent(pageOptions) {
       computeProductDetailsUrl: function (category, product) {
         return `#/category/${category.id}/product/${product.id}`;
       },
-      addProduct: function () {
+      addProduct: async function () {
         if (this.newProductName === '') {
           return;
         }
@@ -92,13 +92,12 @@ function getPageComponent(pageOptions) {
         };
         this.newProductName = '';
 
-        this.productsCollection.create(newProduct)
-        .then((err, newId) => {
-          // TODO: Success message
-        })
-        .catch((err) => {
+        try {
+          await this.productsCollection.create(newProduct);
+        } catch (error) {
           // TODO: Handle error
-        });
+        }
+        // TODO: Success message
       },
       inputKeyDown: function (event) {
         if (event.key === 'Enter') {

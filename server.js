@@ -150,6 +150,34 @@ let crudOptions = {
   thinkyOptions: {
     host: process.env.DATABASE_HOST || '127.0.0.1',
     port: process.env.DATABASE_PORT || 28015
+  },
+
+  middleware: {
+    invoke: async function (action) {
+      // This is a simplified interface for Asyngular middleware for the invoke action.
+      // To delay the action, use await.
+      // To block the action, throw an Error.
+    },
+    transmit: async function (action) {
+      // This is a simplified interface for Asyngular middleware for the transmit action.
+      // To delay the action, use await.
+      // To block the action, throw an Error.
+    },
+    subscribe: async function (action) {
+      // This is a simplified interface for Asyngular middleware for the subscribe action.
+      // To delay the action, use await.
+      // To block the action, throw an Error.
+    },
+    publishIn: async function (action) {
+      // This is a simplified interface for Asyngular middleware for the publishIn action.
+      // To delay the action, use await.
+      // To block the action, throw an Error.
+    },
+    authenticate: async function (action) {
+      // This is a simplified interface for Asyngular middleware for the authenticate action.
+      // To delay the action, use await.
+      // To block the action, throw an Error.
+    }
   }
 };
 

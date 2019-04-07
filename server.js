@@ -94,7 +94,7 @@ let crudOptions = {
           }
         }
       },
-      filters: {
+      access: {
         pre: mustBeLoggedIn
       }
     },
@@ -131,9 +131,9 @@ let crudOptions = {
           }
         }
       },
-      filters: {
+      access: {
         pre: mustBeLoggedIn,
-        post: postFilter
+        post: postAccessFilter
       }
     },
     User: {
@@ -141,7 +141,7 @@ let crudOptions = {
         username: type.string(),
         password: type.string()
       },
-      filters: {
+      access: {
         pre: mustBeLoggedIn
       }
     }
@@ -188,7 +188,7 @@ async function mustBeLoggedIn(req) {
   }
 }
 
-async function postFilter(req) {
+async function postAccessFilter(req) {
   // The post access control filters have access to the
   // resource object from the DB.
   // In case of read actions, you can even modify the

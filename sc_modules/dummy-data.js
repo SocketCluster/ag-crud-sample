@@ -16,14 +16,6 @@ module.exports.attach = async function (scServer, scCrudRethink) {
   // If there is no User data, assume that we are starting with
   // an empty database.
   if (!result || !result.data || !result.data.length) {
-    let schema = {
-      Category: {
-        foreignKeys: {
-          products: 'Product'
-        }
-      }
-    };
-
     let categories = {
       1: {
         name: 'Smartphones',

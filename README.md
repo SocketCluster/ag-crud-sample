@@ -2,13 +2,13 @@
 
 Scroll to the bottom for installation instructions.
 
-A sample inventory tracking realtime single page app built with Asyngular (https://asyngular.io/), VueJS and RethinkDB.
+A sample inventory tracking realtime single page app built with SocketCluster (https://socketcluster.io/), VueJS and RethinkDB.
 It demonstrates a way of building realtime apps.
 
 All code for the server-side worker logic is linked from worker.js - It's mostly generic so feel free to reuse/modify for your own app
 or you can use this app as a base to build yours if starting from scratch.
 
-Aside from Asyngular, VueJS and RethinkDB, this sample app uses the following modules:
+Aside from SocketCluster, VueJS and RethinkDB, this sample app uses the following modules:
 - ag-collection (https://github.com/SocketCluster/ag-collection - ```npm install ag-collection```)
 - ag-model (https://github.com/SocketCluster/ag-model - ```npm install ag-model```)
 - ag-crud-rethink (https://github.com/SocketCluster/ag-crud-rethink - ```npm install ag-crud-rethink```)
